@@ -1,13 +1,12 @@
-document.getElementById("btn-log").addEventListener("click", HelloWorld);
 document.getElementById("btn-speech").addEventListener("click", runSpeechRecognition);
+document.getElementById("btn-perm").addEventListener("click",givePermissions);
 
-function HelloWorld(){
+function givePermissions() {
     chrome.tabs.create({url: "permissions.html"});
-    console.log("Created New Page");
 }
 
 function runSpeechRecognition() {
-    console.log("Running Speech Recog");
+    // console.log("Running Speech Recog");
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
     // get output div reference
@@ -48,18 +47,18 @@ function openTabs(transcript){
         chrome.tabs.create({url: "https://www.youtube.com/"});
 
     else if(transcript == "Netflix")
-        chrome.tabs.create({url: "https://www.netflix.com/browse"});
+        chrome.tabs.create({url: "https://www.netflix.com/"});
 
-    else if(transcript == "Hotstar")
+    else if(transcript == "hotstar")
         chrome.tabs.create({url: "https://www.hotstar.com/in"});
 
-    else if(transcript == "Prime Video")
+    else if(transcript == "Prime video")
         chrome.tabs.create({url: "https://www.primevideo.com/"});
 
-    else if(transcript == "Prime Music")
+    else if(transcript == "Prime music")
         chrome.tabs.create({url: "https://music.amazon.in/"});
 
-    else if(transcript == "Apple Music")
+    else if(transcript == "Apple music")
         chrome.tabs.create({url: "https://www.apple.com/in/apple-music/"});
 
     else if(transcript == "spotify")
@@ -74,15 +73,15 @@ function openTabs(transcript){
     else if(transcript == "GitHub")
     chrome.tabs.create({url: "https://github.com/"});
 
-    else if(transcript == "Stackoverflow")
+    else if(transcript == "stack overflow")
         chrome.tabs.create({url: "https://stackoverflow.com/"});
 
-    else if(transcript == "Zoom")
+    else if(transcript == "zoom")
         chrome.tabs.create({url: "https://zoom.us/"});
 
     else if(transcript == "Google")
     chrome.tabs.create({url: "https://www.google.com/"});
 
-    else if(transcript == "")
-        chrome.tabs.create({url: "https://www.wikipedia.org/"});
+    else
+        chrome.tabs.create({url: "https://www.google.com/search?q="+ transcript});
 }
