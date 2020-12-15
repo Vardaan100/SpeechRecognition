@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+  
+    "name": "Voice assistant",
+    "description": "Speech assistant",
+    "version": "1.0.0",
+  
+    "browser_action": {
+     "default_icon": "icon.png",
+     "default_popup": "popup.html"
+    },
+    "background" : {
+        "page" : "popup.html"
+    
+    
+    },
+    
+    "web_accessible_resources": [
+          "permissions.html"
+        ],
+        
+
+      
+    
+    "permissions": [
+     "activeTab",
+     "tabs",
+     "storage",
+     "fullscreen", "audioCapture",
+     "http://*.facebook.com/*",
+     "http://*.google.com/*"
+    ]
+}   
